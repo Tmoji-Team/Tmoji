@@ -1,8 +1,8 @@
 
 
 
-f = open('./data/emojifydata-en/dev.txt', 'r')
-w_f = open('./data/extract/dev.txt', 'w')
+f = open('../data/emojifydata-en/dev.txt', 'r')
+w_f = open('../data/extract/dev.txt', 'w')
 
 sentence = []
 emoji = []

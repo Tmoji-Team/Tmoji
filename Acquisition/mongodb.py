@@ -10,7 +10,7 @@ client = MongoClient(host='127.0.0.1',
                     authSource="admin")
 db = client['bigdata']
 
-f = open('./data/extract/dev.txt', 'r')
+f = open('../data/extract/dev.txt', 'r')
 count = 0
 sentences =[]
 for line in f:
