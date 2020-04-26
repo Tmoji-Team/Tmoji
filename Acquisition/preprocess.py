@@ -1,8 +1,8 @@
 
 
 
-f = open('./data/emojifydata-en/train.txt', 'r')
-w_f = open('./data/extract/train.txt', 'w')
+f = open('./data/emojifydata-en/dev.txt', 'r')
+w_f = open('./data/extract/dev.txt', 'w')
 
 sentence = []
 emoji = []
@@ -21,7 +21,7 @@ for line in f:
         # print(emoji)
         test = "".join(sentence)
         place = 0
-        if test.find("^") == -1:
+        if test.find("^") == -1 and len(emoji) != 0:
         # if sum(not c.isalnum() for c in test) == 0:
             w_f.write(" ".join(sentence) + "^" + " ".join(emoji)+'\n')
         sentence, emoji = [], []
