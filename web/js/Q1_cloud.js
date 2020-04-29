@@ -83,7 +83,7 @@ function getDict(){
         wrd.push(key)
         
     }
-    console.log(wrd)
+    // console.log(wrd)
     return wrd
     .map(function(d){
         return {text: d, size: dict[d]*100+20};
@@ -92,5 +92,5 @@ function getDict(){
 
 
 //Create a new instance of the word cloud visualisation.
-var myWordCloud = wordCloud('#try');
+var myWordCloud = wordCloud('#Q1-content');
 myWordCloud.update(getDict())

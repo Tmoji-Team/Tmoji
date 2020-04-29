@@ -26,6 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q1">Q1</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q2">Q2</a></li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +36,18 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <h2 class="text-center mt-0">Question 1</h2>
-                    <div class="col-lg-8 text-center" id="try">
+                    <div class="col-lg-8 text-center" id="Q1-content">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Q2-->
+        <section class="page-section" id="Q2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="text-center mt-0">Question 2</h2>
+                    <div class="col-lg-8 text-center" id="Q2-content">
+                    <div id="tooltip"></div>
                     </div>
                 </div>
             </div>
@@ -53,8 +65,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <!-- Load Q1 -->
+        <script src="https://d3js.org/d3.v3.min.js"></script>  
         <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
         <script src="js/Q1_cloud.js"></script>
+        <!-- Load Q2 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="js/Q2_chord.js"></script>
     </body>
 </html>
