@@ -1,4 +1,4 @@
 data/*
 .gitignore/*
 .DS_Store`
-web/test-data/flare.json
+*.pyc
