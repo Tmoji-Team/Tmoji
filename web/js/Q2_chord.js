@@ -10,6 +10,8 @@ var svg = d3.select("#Q2-content")
     .attr("transform", "translate(220,220)")
 
 // create a matrix
+var NameProvider = ["Apple","HTC","Huawei","LG","Nokia","Samsung","Sony","Other"];
+
 var matrix = [
   [2,  1, 8, 9],
   [ 1, 9, 5, 5],
@@ -58,7 +60,7 @@ group.append("g")
 // Add the ticks
 group
   .selectAll(".group-tick")
-  .data(function(d) { return groupTicks(d, 25); })    // Controls the number of ticks: one tick each 25 here.
+  .data(function(d) { return groupTicks(d, 1); })    // Controls the number of ticks: one tick each 25 here.
   .enter()
   .append("g")
     .attr("transform", function(d) { return "rotate(" + (d.angle * 180 / Math.PI - 90) + ") translate(" + 200 + ",0)"; })
@@ -69,7 +71,7 @@ group
 // Add the labels of a few ticks:
 group
   .selectAll(".group-tick-label")
-  .data(function(d) { return groupTicks(d, 25); })
+  .data(function(d) { return groupTicks(d, 1); })
   .enter()
   .filter(function(d) { return d.value % 25 === 0; })
   .append("g")
