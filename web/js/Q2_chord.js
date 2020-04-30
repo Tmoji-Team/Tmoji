@@ -10,7 +10,7 @@ var svg = d3.select("#Q2-content")
     .attr("transform", "translate(220,220)")
 
 // create a matrix
-var NameProvider = ["Apple","HTC","Huawei","LG","Nokia","Samsung","Sony","Other"];
+
 
 var matrix = [
   [2,  1, 8, 9],
