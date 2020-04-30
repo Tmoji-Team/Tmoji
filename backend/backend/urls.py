@@ -19,5 +19,5 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', view.q1),
+    url(r'^$', view.q),
 ]
