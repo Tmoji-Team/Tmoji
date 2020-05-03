@@ -75,6 +75,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Q5-->
+        <section class="page-section" id="Q5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="text-center mt-0">Question 5</h2>
+                    <div class="col-lg-8 text-center" id="Q5-content" class="Q5_div">
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Footer-->
         <footer class="bg-light py-5">
@@ -92,12 +103,36 @@
         <script src="https://d3js.org/d3.v3.min.js"></script>  
         <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
         <script src="js/Q1_cloud.js"></script>
-        <!-- Load Q2 -->
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="js/Q2_chord.js"></script>
+        <!-- Load Q2 and Q4 -->
+        
+        <script type="module">
+        // Load the Observable runtime and inspector.
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+        // Your notebook, compiled as an ES module.
+        import Q2 from "https://api.observablehq.com/@vy538/chord-dependency-diagram.js?v=3";
+        import Q4 from "https://api.observablehq.com/@vy538/zoomable-sunburst.js?v=3";
+        // Load the notebook, observing its cells with a default Inspector
+        // that simply renders the value of each cell into the provided DOM node.
+        // new Runtime().module(notebook, Inspector.into(document.body));
+
+        new Runtime().module(Q2, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#Q2-content"));
+          }
+        });
+
+        new Runtime().module(Q4, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#Q4-content"));
+          }
+        });
+        </script>
         <!-- Load Q3 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="js/Q3_scatterplot.js"></script>
-        <!-- Load Q4 -->
-        <script src="js/Q4_zoomableSunburst.js"></script>
+        <!-- Load Q5 -->
+        <link href="css/styles2.css" rel="stylesheet" />
+        <script src="js/Q5_abc.js"></script>
     </body>
 </html>

@@ -1,0 +1,57 @@
+ .Q5_div{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+}
+ .Q5_card{
+    /*max-width: 120px;*/
+     /*min-height: 96px;*/
+     background: #02b875;
+     /*padding: 10px;*/
+     box-sizing: border-box;
+     color: #FFF;
+     margin:10px;
+     box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
+}
+ .Q5_card:nth-child(2){
+    background: #4181ee;
+}
+ .Q5_card:last-child{
+    background: #673ab7;
+}
+ .Q5_card-title{
+     margin-top: 0;
+     font-size: 72px;
+     font-weight: 600;
+     letter-spacing: 1.2px;
+}
+ .Q5_card-content{
+     font-size: 36px;
+     letter-spacing: 0.5px;
+     line-height: 1.5;
+}
+ .Q5_card-btn{
+     all: unset;
+     display: block;
+     margin-left: auto;
+     border: 2px solid #FFF;
+     padding: 10px 15px;
+     border-radius: 25px;
+     font-size: 10px;
+     font-weight: 600;
+     transition: all 0.5s;
+     cursor: pointer;
+     letter-spacing: 1.2px;
+}
+ .Q5_card-btn:hover{
+    color:#02b875;
+    background: #FFF;
+}
+ .Q5_card:nth-child(2) .card-btn:hover{
+    color:#4181ee;
+    background: #FFF;
+}
+ .Q5_card:last-child .card-btn:hover{
+    color:#673ab7;
+     background: #FFF;
+}
