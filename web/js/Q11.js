@@ -1,17 +1,17 @@
-// set the dimensions and margins of the graph
-var margin = {top: 100, right: 0, bottom: 0, left: 0},
-    width = 460 - margin.left - margin.right,
-    height = 460 - margin.top - margin.bottom,
+// set the dimensions and margin_11s of the graph
+var margin_11 = {top: 100, right: 0, bottom: 0, left: 0},
+    width = 460 - margin_11.left - margin_11.right,
+    height = 460 - margin_11.top - margin_11.bottom,
     innerRadius = 90,
     outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 
 // append the svg object
 var svg = d3.select("#try11")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + margin_11.left + margin_11.right)
+    .attr("height", height + margin_11.top + margin_11.bottom)
   .append("g")
-    .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
+    .attr("transform", "translate(" + (width / 2 + margin_11.left) + "," + (height / 2 + margin_11.top) + ")");
 
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/Q11_test.csv", function(data) {
 

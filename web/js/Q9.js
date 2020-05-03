@@ -1,39 +1,39 @@
 // set the dimensions and margin_9s of the graph
 var margin_9 = {top: 10, right: 20, bottom: 30, left: 50},
-    width = 500 - margin_9.left - margin_9.right,
+    width_9 = 500 - margin_9.left - margin_9.right,
     height = 420 - margin_9.top - margin_9.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#try9")
+var svg = d3.select("Q9")
   .append("svg")
-    .attr("width", width + margin_9.left + margin_9.right)
+    .attr("width_9", width_9 + margin_9.left + margin_9.right)
     .attr("height", height + margin_9.top + margin_9.bottom)
   .append("g")
     .attr("transform",
           "translate(" + margin_9.left + "," + margin_9.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/q9_test.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv", function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()
-    .domain([0, 10])
-    .range([ 0, width ]);
+    .domain([0, 10000])
+    .range([ 0, width_9 ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 10])
+    .domain([35, 90])
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
 
   // Add a scale for bubble size
   var z = d3.scaleLinear()
-    .domain([0, 10])
-    .range([ 1, 3]);
+    .domain([200000, 1310000000])
+    .range([ 1, 40]);
 
   // Add dots
   svg.append('g')
@@ -41,9 +41,9 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
     .data(data)
     .enter()
     .append("circle")
-      .attr("cx", function (d) { return x(d.x); } )
-      .attr("cy", function (d) { return y(d.y); } )
-      .attr("r", function (d) { return z(d.num); } )
+      .attr("cx", function (d) { return x(d.gdpPercap); } )
+      .attr("cy", function (d) { return y(d.lifeExp); } )
+      .attr("r", function (d) { return z(d.pop); } )
       .style("fill", "#69b3a2")
       .style("opacity", "0.7")
       .attr("stroke", "black")

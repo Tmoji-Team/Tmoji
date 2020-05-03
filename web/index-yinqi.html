@@ -17,6 +17,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://d3js.org/d3.v4.min.js"></script>
 
     </head>
     <body id="page-top">
@@ -88,6 +89,7 @@
                 <div class="row justify-content-center">
                     <h2 class="text-center mt-0">Question 9</h2>
                     <div class="col-lg-8 text-center" id="try9"></div>
+                    <script src="js/Q9.js",type="text/javascript"></script>
                 </div>
             </div>
         </section>
@@ -128,7 +130,7 @@
 
     
 
-        <script src="https://d3js.org/d3.v4.min.js"></script>
+    
 
 
         <!-- Q6 -->
@@ -175,30 +177,15 @@
         });
         </script>       
 
-        <!-- Q9 -->
-        <!--script src="js/Q9.js",type="text/javascript"></script-->
 
-        <!-- Q8, Q10, Q11 -->
-        <script src="https://bl.ocks.org/syntagmatic/raw/3341641/render-queue.js"></script>
-
-        <!--script src="js/Q8_10_11.js",type="text/javascript"></script-->      
-        
-        <!-- Q10 -->
-
-
-
-        <!--Q11 -->
-
-        <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
-        <script src="js/Q11.js",type="text/javascript"></script>  
+        <!-- Q8 -->
         <script type="module">
-
         
         // Load the Observable runtime and inspector.
         import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
         
         // Your notebook, compiled as an ES module.
-        import notebook from "https://api.observablehq.com/@yq605879396/horizontal-bar-chart.js?v=3";
+        import notebook from "https://api.observablehq.com/@yq605879396/zoomable-circle-packing-coronawhy-structure.js?v=3";
         
         // Load the notebook, observing its cells with a default Inspector
         // that simply renders the value of each cell into the provided DOM node.
@@ -206,10 +193,47 @@
         
         new Runtime().module(notebook, name => {
           if (name === "chart") {
-            return new Inspector(document.querySelector("#try7"));
+            return new Inspector(document.querySelector("#try8"));
           }
         });
-        </script>       
+
+        </script>    
+        <!-- Q9 -->
+
+
+        <!-- Q10 -->
+        <script type="module">
+        
+        // Load the Observable runtime and inspector.
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        
+        // Your notebook, compiled as an ES module.
+        import notebook from "https://api.observablehq.com/@yq605879396/horizontal-bar-chart/2.js?v=3";
+        
+        // Load the notebook, observing its cells with a default Inspector
+        // that simply renders the value of each cell into the provided DOM node.
+        // new Runtime().module(notebook, Inspector.into(document.body));
+        
+        new Runtime().module(notebook, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#try10"));
+          }
+        });
+        </script>    
+
+
+        <!--Q11 -->
+
+        <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+        <script src="js/Q11.js",type="text/javascript"></script>  
+
+
+
+        <!-- Q8, Q10, Q11 >
+        <script src="https://bl.ocks.org/syntagmatic/raw/3341641/render-queue.js"></script>
+
+        <script src="js/Q8_10_11.js",type="text/javascript"></script-->      
+        
 
     </body>
     </body>
