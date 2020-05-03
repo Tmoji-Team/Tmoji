@@ -1,6 +1,8 @@
-var margin = {top: 66, right: 110, bottom: 20, left: 188},
+var margin = {top: 66, right: 11, bottom: 20, left: 11},
     width = document.body.clientWidth - margin.left - margin.right,
     height = 340 - margin.top - margin.bottom,
+    //width =1024,
+    //height =256,
     innerHeight = height - 2;
 
 var devicePixelRatio = window.devicePixelRatio || 1;
@@ -69,7 +71,7 @@ var xscale = d3.scalePoint()
 
 var yAxis = d3.axisLeft();
 
-var container = d3.select("#try10").append("div")
+var container = d3.select("#try8").append("div")
     .attr("class", "parcoords")
     .style("width", width + margin.left + margin.right + "px")
     .style("height", height + margin.top + margin.bottom + "px");
@@ -94,7 +96,7 @@ ctx.globalAlpha = 0.15;
 ctx.lineWidth = 1.5;
 ctx.scale(devicePixelRatio, devicePixelRatio);
 
-//var output = d3.select("#try10").append("pre");
+var output = d3.select("#try8").append("pre");
 
 var axes = svg.selectAll(".axis")
     .data(dimensions)

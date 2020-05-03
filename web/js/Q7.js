@@ -1,6 +1,9 @@
 var margin_7 = {top: 100, right: 0, bottom: 0, left: 0},
     width = 460 - margin_7.left - margin_7.right,
     height = 460 - margin_7.top - margin_7.bottom,
+    //width = 256
+    //height = 256
+
     innerRadius = 90,
     outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 

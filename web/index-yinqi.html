@@ -17,7 +17,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style2.css"></link>
 
     </head>
     <body id="page-top">
@@ -53,6 +52,7 @@
         <section class="page-section" id="Q6">
             <div class="container">
                 <div class="row justify-content-center">
+                    <h2 class="text-center mt-0">Question 6</h2>
                     <div class="col-lg-8 text-center" id="try6">
                         <div id="chart6"></div>
                     </div>
@@ -64,6 +64,7 @@
         <section class="page-section" id="Q7">
             <div class="container">
                 <div class="row justify-content-center">
+                    <h2 class="text-center mt-0">Question 7</h2>
                     <div class="col-lg-8 text-center" id="try7">
                     </div>
                 </div>
@@ -71,12 +72,12 @@
         </section>
 
 
-        <!-- Q8-->
+        <!-- Q8 -->
         <section class="page-section" id="Q8">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center" id="try8">
-                    </div>
+                    <h2 class="text-center mt-0">Question 8</h2>
+                    <div class="col-lg-8 text-center" id="try8"></div>
                 </div>
             </div>
         </section>
@@ -85,8 +86,8 @@
         <section class="page-section" id="Q9">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center" id="try9">
-                    </div>
+                    <h2 class="text-center mt-0">Question 9</h2>
+                    <div class="col-lg-8 text-center" id="try9"></div>
                 </div>
             </div>
         </section>
@@ -95,10 +96,21 @@
         <section class="page-section" id="Q10">
             <div class="container">
                 <div class="row justify-content-center">
-                                        <div class="col-lg-8 text-center" id="try10">
-                    </div>
+                     <h2 class="text-center mt-0">Question 10</h2>
+                    <div class="col-lg-8 text-center" id="try10"></div>
                 </div>
             </div>
+        </section>
+
+        <!-- Q11-->
+        <section class="page-section" id="Q11">
+            <div class="container">
+                <div class="row justify-content-center">
+                     <h2 class="text-center mt-0">Question 11</h2>
+                    <div class="col-lg-8 text-center" id="try11"></div>
+                </div>
+            </div>
+        </section>
 
         
         <!-- Footer-->
@@ -117,9 +129,9 @@
     
 
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="js/d3-scale-radial.js",type="text/javascript"></script>
-        <script src="js/Q7.js",type="text/javascript"></script>
 
+
+        <!-- Q6 -->
         <script type="module">
         
         // Load the Observable runtime and inspector.
@@ -134,15 +146,70 @@
         
         new Runtime().module(notebook, name => {
           if (name === "chart") {
-            return new Inspector(document.querySelector("#chart6"));
+            return new Inspector(document.querySelector("#try6"));
           }
         });
         </script>
-        <script src="js/Q9.js",type="text/javascript"></script>
 
+
+        <!-- Q7 -->
+        <!-- <script src="js/d3-scale-radial.js",type="text/javascript"></script>
+        <script src="js/Q7.js",type="text/javascript"></script>  -->
+
+        <script type="module">
+        
+        // Load the Observable runtime and inspector.
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        
+        // Your notebook, compiled as an ES module.
+        import notebook from "https://api.observablehq.com/@yq605879396/donut-chart.js?v=3";
+        
+        // Load the notebook, observing its cells with a default Inspector
+        // that simply renders the value of each cell into the provided DOM node.
+        // new Runtime().module(notebook, Inspector.into(document.body));
+        
+        new Runtime().module(notebook, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#try7"));
+          }
+        });
+        </script>       
+
+        <!-- Q9 -->
+        <!--script src="js/Q9.js",type="text/javascript"></script-->
+
+        <!-- Q8, Q10, Q11 -->
         <script src="https://bl.ocks.org/syntagmatic/raw/3341641/render-queue.js"></script>
-        <link rel="stylesheet" href="css/style2.css"></link>
-        <script src="js/Q8_10_11.js",type="text/javascript"></script>        
+
+        <!--script src="js/Q8_10_11.js",type="text/javascript"></script-->      
+        
+        <!-- Q10 -->
+
+
+
+        <!--Q11 -->
+
+        <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+        <script src="js/Q11.js",type="text/javascript"></script>  
+        <script type="module">
+
+        
+        // Load the Observable runtime and inspector.
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        
+        // Your notebook, compiled as an ES module.
+        import notebook from "https://api.observablehq.com/@yq605879396/horizontal-bar-chart.js?v=3";
+        
+        // Load the notebook, observing its cells with a default Inspector
+        // that simply renders the value of each cell into the provided DOM node.
+        // new Runtime().module(notebook, Inspector.into(document.body));
+        
+        new Runtime().module(notebook, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#try7"));
+          }
+        });
+        </script>       
 
     </body>
     </body>
