@@ -1,5 +1,5 @@
-{"nodes":[{"0":"Agricultural 'waste'"},
-    {"1":"Bio-conversion"},{"2":"dakewang"},
+{"nodes":[{"name":"Agricultural 'waste'"},
+    {"name":"Bio-conversion"},{"name":"dakewang"},
    ] ,
 "links":[{"source":0,
     "target":1,
