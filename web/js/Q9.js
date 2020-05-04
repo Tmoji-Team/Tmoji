@@ -1,16 +1,16 @@
-// set the dimensions and margin_9s of the graph
-var margin_9 = {top: 10, right: 20, bottom: 30, left: 50},
-    width_9 = 500 - margin_9.left - margin_9.right,
-    height = 420 - margin_9.top - margin_9.bottom;
+// set the dimensions and margins of the graph
+var margin = {top: 100, right: 0, bottom: 0, left: 0},
+    width = 460 - margin.left - margin.right,
+    height = 460 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("Q9")
+var svg = d3.select("#try9")
   .append("svg")
-    .attr("width_9", width_9 + margin_9.left + margin_9.right)
-    .attr("height", height + margin_9.top + margin_9.bottom)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin_9.left + "," + margin_9.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv", function(data) {
@@ -18,7 +18,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   // Add X axis
   var x = d3.scaleLinear()
     .domain([0, 10000])
-    .range([ 0, width_9 ]);
+    .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
