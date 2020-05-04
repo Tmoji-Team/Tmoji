@@ -77,7 +77,7 @@ function wordCloud(selector) {
 // var dict = {'🦁':0.1,'😜':0.2,'😈':0.3,'😱':0.4}
 // var dict = {{ context }}
 
-function getDict(){
+function getDict(dict){
     wrd = []
     for(var key in dict) {
         wrd.push(key)
@@ -91,6 +91,3 @@ function getDict(){
 }
 
 
-//Create a new instance of the word cloud visualisation.
-// var myWordCloud = wordCloud('#try');
-// myWordCloud.update(getDict())
