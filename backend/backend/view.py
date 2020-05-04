@@ -29,15 +29,6 @@ def q(request):
     # q1
     q1 = {}
 
-    # spark = SparkSession \
-    #     .builder \
-    #     .appName("myApp") \
-    #     .config("spark.mongodb.input.uri", "mongodb://127.0.0.1/bigdata.q1") \
-    #     .config("spark.mongodb.output.uri", "mongodb://127.0.0.1/bigdata.q1") \
-    #     .config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.11:2.3.1') \
-    #     .getOrCreate()
-    #
-    # df = spark.read.format("com.mongodb.spark.sql.DefaultSource").load()
     cursor = list(cursor)
     emojis = [row['emoji'] for row in cursor]
     fres = [row['fre'] for row in cursor]
@@ -75,23 +66,98 @@ def q(request):
     q2 = {'matrix': matrix, 'indexByName': indexByName, 'nameByIndex': nameByIndex}
     context['q2'] = q2
 
-    # q7
-    cursor = db['q7'].find()
+    # q8
+    cursor = db['q8'].find()
+    emojis_ = []
+    pos = []
+    for row in cursor:
+        emojis_.append(row['emoji'])
+        pos.append(row['pos'])
+
+    q8 = {}
+    children = []
+    head = []
+    middle = []
+    tail = []
+    for e, p in zip(emojis_, pos):
+        tmp = {}
+        tmp['name'] = emoji.emojize(e)
+        tmp['value'] = 5
+        if p == 0:
+            head.append(tmp)
+        elif p == 1:
+            middle.append(tmp)
+        else:
+            tail.append(tmp)
+    head_dict = {}
+    head_dict['name'] = 'Head'
+    head_dict['children'] = head
+    head_dict['value'] = len(head)
+
+    middle_dict = {}
+    middle_dict['name'] = 'Middle'
+    middle_dict['children'] = middle
+    middle_dict['value'] = len(middle)
+
+    tail_dict = {}
+    tail_dict['name'] = 'Tail'
+    tail_dict['children'] = tail
+    tail_dict['value'] = len(tail)
+
+    context['q8'] = {'children': [head_dict, middle_dict, tail_dict], 'value': 5}
+
+    # q9
+    cursor = db['q9'].find()
+    x = []
+    y = []
     num = []
+    for row in cursor:
+        x.append(row['sent_len'])
+        y.append(row['emoji_len'])
+        num.append(row['count'])
+
+    q9 = []
+    for x_, y_, num_ in zip(x, y, num):
+        tmp = {}
+        tmp['x'] = x_
+        tmp['y'] = y_
+        tmp['num'] = num_
+        q9.append(tmp)
+    context['q9'] = q9
+
+    # q10
+    cursor = db['q10'].find()
+    emojis_ = []
     counts = []
     for row in cursor:
-        num.append(row['num'])
-        counts.append((row['counts']))
+        emojis_.append(row['emoji'])
+        counts.append(row['count'])
 
-    q7 = []
-    for n, c in zip(num, counts):
+    q10 = []
+    for e, c in zip(emojis_, counts):
         tmp = {}
-        tmp['num'] = n
-        tmp['counts'] = c
-        q7.append(tmp)
-    print(q7)
+        tmp['name'] = emoji.emojize(e)
+        tmp['value'] = c
+        q10.append(tmp)
+    context['q10'] = q10
 
-    context['q7'] = q7
+    # q11
+    cursor = db['q11'].find()
+    emojis_ = []
+    ave_lens = []
+    for row in cursor:
+        emojis_.append(row['emoji'])
+        ave_lens.append((row['ave_len']))
+
+    q11 = []
+    for n, c in zip(emojis_, ave_lens):
+        tmp = {}
+        tmp['emoji'] = emoji.emojize(n)
+        tmp['ave_len'] = c
+        q11.append(tmp)
+    print(q11)
+
+    context['q11'] = q11
 
     return render(request, 'index.html', {'context': json.dumps(context)})
 
