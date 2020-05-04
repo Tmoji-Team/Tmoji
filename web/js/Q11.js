@@ -1,17 +1,17 @@
 // set the dimensions and margin_11s of the graph
 var margin_11 = {top: 100, right: 0, bottom: 0, left: 0},
-    width = 460 - margin_11.left - margin_11.right,
-    height = 460 - margin_11.top - margin_11.bottom,
+    width_11 = 460 - margin_11.left - margin_11.right,
+    height_11 = 460 - margin_11.top - margin_11.bottom,
     innerRadius = 90,
-    outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+    outerRadius = Math.min(width_11, height_11) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 
 // append the svg object
-var svg = d3.select("#try11")
+var svg_11 = d3.select("#try11")
   .append("svg")
-    .attr("width", width + margin_11.left + margin_11.right)
-    .attr("height", height + margin_11.top + margin_11.bottom)
+    .attr("width", width_11 + margin_11.left + margin_11.right)
+    .attr("height", height_11 + margin_11.top + margin_11.bottom)
   .append("g")
-    .attr("transform", "translate(" + (width / 2 + margin_11.left) + "," + (height / 2 + margin_11.top) + ")");
+    .attr("transform", "translate(" + (width_11 / 2 + margin_11.left) + "," + (height_11 / 2 + margin_11.top) + ")");
 
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/Q11_test.csv", function(data) {
 
@@ -25,7 +25,7 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
       .domain([0, 100]); // Domain of Y is from 0 to the max seen in the data
 
   // Add the bars
-  svg.append("g")
+  svg_11.append("g")
     .selectAll("path")
     .data(data)
     .enter()
@@ -40,7 +40,7 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
           .padRadius(innerRadius))
 
   // Add the labels
-  svg.append("g")
+  svg_11.append("g")
       .selectAll("g")
       .data(data)
       .enter()
