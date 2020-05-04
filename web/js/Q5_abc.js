@@ -1,17 +1,18 @@
 var single = '<div class="col-sm-6"><div class="card Q5_card" ><h3 class="Q5_card-title card-body">A</h3><p class="Q5_card-content">😅</p></div></div>'
 var newContent = "";
 
-var data = [['t', '😂'], ['s', '🙏'], ['d', '🗣'], ['p', '😍'], ['x', '👉'], ['a', '😉'], ['b', '👏'], ['i', '♀'], ['o', '💙'], ['k', '🙌'], ['c', '👍'], ['w', '💪']]
+var data = [['a', '😉'], ['b', '👏'], ['c', '👍'], ['d', '🗣'], ['i', '♀'], ['k', '🙌'], ['o', '💙'], ['p', '😍'], ['s', '🙏'], ['t', '😂'], ['w', '💪'], ['x', '👉']]
 
-nextR = 3
+nextR = 4
 
 for (i = 0; i < data.length; i++) {
 	if(i%nextR==0){
-		struc = '<div class="row"><div class="col-sm-4 "><div class="card Q5_card" style="max-width: 12rem;"><h3 class="Q5_card-title card-body">'
+		struc = '<div class="row">'
 	}else{
-		struc = '<div class="col-sm-4"><div class="card Q5_card" style="max-width: 12rem;"><h3 class="Q5_card-title card-body">'
+		struc = ''
 	}
 	temp = data[i]
+	struc += '<div class="col-sm-3"><div class="card Q5_card""><h3 class="Q5_card-title card-body">'
   	struc += temp[0].toUpperCase()
   	struc += '</h3><p class="Q5_card-content">'
   	struc += temp[1]
