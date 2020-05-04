@@ -15,6 +15,8 @@ var svg_11 = d3.select("#try11")
 
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/Q11_test.csv", function(data) {
 
+  extent_value = d3.extent(data, d => d.value)
+
   // Scales
   var x = d3.scaleBand()
       .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
@@ -22,7 +24,7 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
       .domain(data.map(function(d) { return d.Country; })); // The domain of the X axis is the list of states.
   var y = d3.scaleRadial()
       .range([innerRadius, outerRadius])   // Domain will be define later.
-      .domain([0, 100]); // Domain of Y is from 0 to the max seen in the data
+      .domain([0, 20]); // Domain of Y is from 0 to the max seen in the data
 
   // Add the bars
   svg_11.append("g")
