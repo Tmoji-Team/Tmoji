@@ -114,24 +114,27 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- Load Q1 -->
-        <script src="https://d3js.org/d3.v3.min.js"></script>  
-        <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
-        <script src="js/Q1_cloud.js"></script>
-        <!-- Load Q2 and Q4 -->
+        <script src="js/scripts.js"></script>      
         
+        <!-- Load Q2 and Q4 -->
         <script type="module">
         // Load the Observable runtime and inspector.
         import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 
         // Your notebook, compiled as an ES module.
+        import Q1 from "https://api.observablehq.com/@vy538/word-cloud.js?v=3";
         import Q2 from "https://api.observablehq.com/@vy538/chord-dependency-diagram.js?v=3";
         import Q3 from "https://api.observablehq.com/@vy538/scatterplot.js?v=3";
         import Q4 from "https://api.observablehq.com/@vy538/zoomable-sunburst.js?v=3";
         // Load the notebook, observing its cells with a default Inspector
         // that simply renders the value of each cell into the provided DOM node.
         // new Runtime().module(notebook, Inspector.into(document.body));
+
+        new Runtime().module(Q1, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#Q1-content"));
+          }
+        });
 
         new Runtime().module(Q2, name => {
           if (name === "chart") {
