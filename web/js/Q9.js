@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 20, bottom: 30, left: 50},
+var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 500 - margin.left - margin.right,
     height = 420 - margin.top - margin.bottom;
 
@@ -15,9 +15,12 @@ var svg = d3.select("#try9")
 //Read the data
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/q9_test.csv", function(data) {
 
+  extent_x = d3.extent(data, d => d.x)
+  extent_y = d3.extent(data, d => d.y)
+  extent_num = d3.extent(data, d => d.num)
   // Add X axis
   var x = d3.scaleLinear()
-    .domain([0, 20])
+    .domain([0, extent_x[1]])
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -25,15 +28,15 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 20])
+    .domain([0, extent_y[1]])
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
 
   // Add a scale for bubble size
   var z = d3.scaleLinear()
-    .domain([1, 200])
-    .range([ 1, 40]);
+    .domain([1, extent_num[1]])
+    .range([ 1, extent_num[1]/extent_x[1]]);
 
   // Add dots
   svg.append('g')
