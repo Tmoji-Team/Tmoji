@@ -127,6 +127,7 @@
 
         // Your notebook, compiled as an ES module.
         import Q2 from "https://api.observablehq.com/@vy538/chord-dependency-diagram.js?v=3";
+        import Q3 from "https://api.observablehq.com/@vy538/scatterplot.js?v=3";
         import Q4 from "https://api.observablehq.com/@vy538/zoomable-sunburst.js?v=3";
         // Load the notebook, observing its cells with a default Inspector
         // that simply renders the value of each cell into the provided DOM node.
@@ -138,16 +139,20 @@
           }
         });
 
+        new Runtime().module(Q3, name => {
+          if (name === "chart") {
+            return new Inspector(document.querySelector("#Q3-content"));
+          }
+        });
+
         new Runtime().module(Q4, name => {
           if (name === "chart") {
             return new Inspector(document.querySelector("#Q4-content"));
           }
         });
         </script>
-        <!-- Load Q3 -->
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="js/Q3_scatterplot.js"></script>
         <!-- Load Q5 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
         <link href="css/styles2.css" rel="stylesheet" />
         <script src="js/Q5_abc.js"></script>
     </body>
