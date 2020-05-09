@@ -47,8 +47,9 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
       .attr("cx", function (d) { return x(d.x); } )
       .attr("cy", function (d) { return y(d.y); } )
       .attr("r", function (d) { return z(d.num); } )
-      .style("fill", "#69b3a2")
+      .style("fill", "#ff6619")
       .style("opacity", "0.7")
-      .attr("stroke", "black")
+      .attr("stroke", "#ffd5b0")
+      .attr("stroke-width", "2px")
       
 })

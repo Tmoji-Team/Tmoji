@@ -1,5 +1,5 @@
 // set the dimensions and margin_11s of the graph
-var margin_11 = {top: 100, right: 0, bottom: 0, left: 0},
+var margin_11 = {top: 100, right: 0, bottom: 100, left: 0},
     width_11 = 460 - margin_11.left - margin_11.right,
     height_11 = 460 - margin_11.top - margin_11.bottom,
     innerRadius = 90,
@@ -13,7 +13,9 @@ var svg_11 = d3.select("#try11")
   .append("g")
     .attr("transform", "translate(" + (width_11 / 2 + margin_11.left) + "," + (height_11 / 2 + margin_11.top) + ")");
 
+
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/Q11_test.csv", function(data) {
+
 
   extent_value = d3.extent(data, d => d.value)
 
@@ -32,7 +34,8 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
     .data(data)
     .enter()
     .append("path")
-      .attr("fill", "#69b3a2")
+      .attr("fill", "#59ffac")
+      //.attr("fill", d =>color(d.Country))
       .attr("d", d3.arc()     // imagine your doing a part of a donut plot
           .innerRadius(innerRadius)
           .outerRadius(function(d) { return y(d['Value']); })
@@ -40,6 +43,7 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
           .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
           .padAngle(0.01)
           .padRadius(innerRadius))
+
 
   // Add the labels
   svg_11.append("g")
@@ -52,7 +56,8 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
       .append("text")
         .text(function(d){return(d.Country)})
         .attr("transform", function(d) { return (x(d.Country) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
-        .style("font-size", "11px")
+        .style("font-size", "20px")
         .attr("alignment-baseline", "middle")
 
 });
+
