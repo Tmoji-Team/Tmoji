@@ -27,20 +27,24 @@ def q(request):
     cursor = db['q1'].find()
 
     # q1
-    q1 = {}
-
+    q1 = []
     cursor = list(cursor)
     emojis = [row['emoji'] for row in cursor]
     fres = [row['fre'] for row in cursor]
 
     for i in range(len(emojis)):
-        q1[emoji.emojize(emojis[i])] = fres[i]
+        tmp = {
+            'text': emoji.emojize(emojis[i]),
+            'value': str(float(fres[i])*10000)
+        }
+        # tmp[emoji.emojize(emojis[i])] = str(float(fres[i])*10000)
+        q1.append(tmp)
     context['q1'] = q1
 
     # q2
     cursor = db['q2'].find()
     cursor = list(cursor)
-    emojis = [row['emoji'] for row in cursor]
+    emojis_ = [row['emoji'] for row in cursor]
     cols = [row['col'] for row in cursor]
 
     emojis = [':face_with_tears_of_joy:', ':red_heart:', ':loudly_crying_face:', ':fire:',
@@ -50,7 +54,7 @@ def q(request):
     indexByName = []
     nameByIndex = []
 
-    for emo, col in zip(emojis, cols):
+    for emo, col in zip(emojis_, cols):
         idx = emojis.index(emo)
         for val_dict in col.values():
             emo1 = val_dict['_1']
@@ -66,6 +70,43 @@ def q(request):
     q2 = {'matrix': matrix, 'indexByName': indexByName, 'nameByIndex': nameByIndex}
     context['q2'] = q2
 
+    # q3
+    cursor = db['q3'].find()
+    emojis_ = []
+    uppers = []
+    lowers = []
+    for row in cursor:
+        emojis_.append(row['emoji'])
+        uppers.append(row['upper'])
+        lowers.append(row['lower'])
+
+    q3 = []
+    for emo, up, lo in zip(emojis_, uppers, lowers):
+        tmp = {
+            'name': emoji.emojize(emo),
+            'x': up/(up+lo),
+            'y': lo/(lo+up)
+        }
+        q3.append(tmp)
+    context['q3'] = q3
+
+    # q7
+    q7 = []
+    cursor = db['q7'].find()
+    nums = []
+    counts = []
+    for row in cursor:
+        nums.append(row['num'])
+        counts.append(row['counts'])
+
+    for n, c in zip(nums, counts):
+        tmp = {
+            'name': n,
+            'value': c
+        }
+        q7.append(tmp)
+    context['q7'] = q7
+
     # q8
     cursor = db['q8'].find()
     emojis_ = []
@@ -74,8 +115,8 @@ def q(request):
         emojis_.append(row['emoji'])
         pos.append(row['pos'])
 
-    q8 = {}
-    children = []
+    # q8 = {}
+    # children = []
     head = []
     middle = []
     tail = []
