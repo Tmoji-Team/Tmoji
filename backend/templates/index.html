@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Creative - Start Bootstrap Theme</title>
+        <title>Tmoji</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../static/assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -18,7 +18,6 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-{#        <link href="../static/css/styles.css" rel="stylesheet" />#}
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -28,17 +27,40 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q1">Q1</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q2">Q2</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q3">Q3</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q4">Q4</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q5">Q5</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q6">Q6</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q7">Q7</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q8">Q8</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q9">Q9</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q10">Q10</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Q11">Q11</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <header class="masthead">
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-center">
+                        <h1 class="text-uppercase text-white font-weight-bold">Tmoji!!!</h1>
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <!-- Q1-->
         <section class="page-section" id="Q1">
             <div class="container">
                 <div class="row justify-content-center">
                     <h2 class="text-center mt-0">Question 1</h2>
-                    <div class="col-lg-8 text-center" id="try">
+                    <div class="col-lg-8 text-center" id="Q1-content">
                     </div>
                 </div>
             </div>
@@ -54,25 +76,45 @@
                 </div>
             </div>
         </section>
+<<<<<<< HEAD
         <!-- Q4-->
         <section class="page-section" id="Q4">
             <div class="container">
                 <div class="row justify-content-center">
                     <h2 class="text-center mt-0">Question 4</h2>
                     <div class="col-lg-8 text-center" id="try4">
+=======
+
+
+        <section class="page-section" id="Q3">
+            <div class="container">
+                <h2 class="text-center mt-0">Question 3</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center" id="Q3-content">
+>>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
                     </div>
                 </div>
             </div>
         </section>
+<<<<<<< HEAD
         <section class="page-section" id="Q5">
             <div class="container">
                 <div class="row justify-content-center">
                     <h2 class="text-center mt-0">Question 5</h2>
                     <div class="col-lg-8 text-center" id="try5">
+=======
+
+        <section class="page-section" id="Q7">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="text-center mt-0">Question 7</h2>
+                    <div class="col-lg-8 text-center" id="Q7-content">
+>>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
                     </div>
                 </div>
             </div>
         </section>
+<<<<<<< HEAD
         <!-- Q6-->
         <section class="page-section" id="Q6">
             <div class="container">
@@ -84,6 +126,9 @@
             </div>
         </section>
         <!-- Q8-->
+=======
+
+>>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
         <section class="page-section" id="Q8">
             <div class="container">
                 <div class="row justify-content-center">
@@ -137,14 +182,8 @@
         <script src="../static/js/scripts.js"></script>
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
-        <script src="../static/js/Q1_cloud.js"></script>
         <script>
             var context = {{ context | safe}};
-            var dict = context['q1'];
-            console.log(dict)
-            //Create a new instance of the word cloud visualisation.
-            var myWordCloud = wordCloud('#try');
-            myWordCloud.update(getDict(dict));
         </script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="../static/js/d3-scale-radial.js" type="text/javascript"></script>
@@ -155,6 +194,16 @@
         <script type="module">
             // Load the Observable runtime and inspector.
             import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+            import Q1 from "https://api.observablehq.com/@vy538/word-cloud.js?v=3";
+
+            const Q1_notebook = new Runtime().module(Q1, name => {
+              if (name === "chart") {
+                return new Inspector(document.querySelector("#Q1-content"));
+              }
+            });
+            Q1_notebook.redefine("test", context['q1']);
+
             // Your notebook, compiled as an ES module.
             import notebook1 from "https://api.observablehq.com/@vy538/chord-dependency-diagram.js?v=3";
             const main = new Runtime().module(notebook1, name => {
@@ -169,6 +218,24 @@
             var nameByIndex = new Map(context['q2']['nameByIndex']);
             q2['nameByIndex'] = nameByIndex;
             main.redefine("data", q2);
+
+            import Q3 from "https://api.observablehq.com/@vy538/scatterplot.js?v=3";
+            const Q3_notebook = new Runtime().module(Q3, name => {
+              if (name === "chart") {
+                return new Inspector(document.querySelector("#Q3-content"));
+              }
+            });
+            Q3_notebook.redefine("data", context['q3']);
+
+
+            import Q7 from "https://api.observablehq.com/@yq605879396/donut-chart.js?v=3";
+            const Q7_notebook = new Runtime().module(Q7, name => {
+              if (name === "chart") {
+                return new Inspector(document.querySelector("#Q7-content"));
+              }
+            });
+            Q7_notebook.redefine("data", context['q7']);
+
 
             import notebook8 from "https://api.observablehq.com/@yq605879396/zoomable-circle-packing-coronawhy-structure.js?v=3";
             const main8 = new Runtime().module(notebook8, name => {
