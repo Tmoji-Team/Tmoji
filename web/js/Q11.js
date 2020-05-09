@@ -12,7 +12,7 @@ var svg_11 = d3.select("#try11")
     .attr("height", height_11 + margin_11.top + margin_11.bottom)
   .append("g")
     .attr("transform", "translate(" + (width_11 / 2 + margin_11.left) + "," + (height_11 / 2 + margin_11.top) + ")");
-
+var color = d3.scaleOrdinal(d3.quantize(d3.interpolateHcl("#FFAD05", "#1DA1F2"), 4));
 
 d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/Q11_test.csv", function(data) {
 
@@ -34,8 +34,8 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
     .data(data)
     .enter()
     .append("path")
-      .attr("fill", "#59ffac")
-      //.attr("fill", d =>color(d.Country))
+      //.attr("fill", "#1da1f2")
+      .attr("fill", d =>color(d.Country.replace(/ .*/, "")))
       .attr("d", d3.arc()     // imagine your doing a part of a donut plot
           .innerRadius(innerRadius)
           .outerRadius(function(d) { return y(d['Value']); })
