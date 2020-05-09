@@ -1,3 +1,4 @@
+function q7(data, selector) {
 var margin_7 = {top: 100, right: 0, bottom: 0, left: 0},
     width = 460 - margin_7.left - margin_7.right,
     height = 460 - margin_7.top - margin_7.bottom,
@@ -68,5 +69,5 @@ svg.append("g")
       .attr("transform", function(d) { return (x(d.Emoji) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
       .style("font-size", "11px")
       .attr("alignment-baseline", "middle");
-
+}
 // });

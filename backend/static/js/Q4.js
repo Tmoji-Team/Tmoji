@@ -1,3 +1,4 @@
+function q4(data, selector){
 width2 = window.innerWidth,
 height2 = window.innerHeight,
 maxRadius = (Math.min(width2, height2) / 2) - 5;
@@ -45,19 +46,19 @@ textFits = d => {
     return d.data.name.length * CHAR_SPACE < perimeter;
 };
 
-svg2 = d3.select('#Q4-content').append('svg')
+svg = d3.select(selector).append('svg')
     .style('width', '100vw')
     .style('height', '100vh')
     .attr('viewBox', `${-width2 / 2} ${-height2 / 2} ${width2} ${height2}`)
     .on('click', () => focusOn()); // Reset zoom on canvas click
 
-d3.json('https://gist.githubusercontent.com/mbostock/4348373/raw/85f18ac90409caa5529b32156aa6e71cf985263f/flare.json', (error, root) => {
+d3.json(data, (error, root) => {
     if (error) throw error;
 
     root = d3.hierarchy(root);
     root.sum(d => d.size);
 
-    const slice = svg2.selectAll('g.slice')
+    const slice = svg.selectAll('g.slice')
         .data(partition(root).descendants());
 
     slice.exit().remove();
@@ -123,7 +124,6 @@ function focusOn(d = { x0: 0, x1: 1, y0: 0, y1: 1 }) {
 
     moveStackToFront(d);
 
-    //
 
     function moveStackToFront(elD) {
         svg.selectAll('.slice').filter(d => d === elD)
@@ -132,4 +132,5 @@ function focusOn(d = { x0: 0, x1: 1, y0: 0, y1: 1 }) {
                 if (d.parent) { moveStackToFront(d.parent); }
             })
     }
+}
 }
