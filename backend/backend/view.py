@@ -36,7 +36,7 @@ def q(request):
     for i in range(len(emojis)):
         tmp = {
             'text': emoji.emojize(emojis[i]),
-            'value': str(float(fres[i])*10000)
+            'value': str(float(fres[i])/100)
         }
         # tmp[emoji.emojize(emojis[i])] = str(float(fres[i])*10000)
         q1.append(tmp)
