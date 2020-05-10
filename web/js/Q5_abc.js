@@ -24,5 +24,5 @@ for (i = 0; i < data.length; i++) {
 	}
   	newContent+= struc
 }
-
 $('#Q5-content').append(newContent);  
+

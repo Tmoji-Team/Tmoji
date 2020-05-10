@@ -70,7 +70,7 @@ def q(request):
     q2 = {'matrix': matrix, 'indexByName': indexByName, 'nameByIndex': nameByIndex}
     context['q2'] = q2
 
-<<<<<<< HEAD
+
     # q4
     q4 = {}
     collection = db.top10Word
@@ -92,9 +92,9 @@ def q(request):
     q4['children'] = result_children
     context['q4'] = q4
 
-    q5 = {}
-    collection = db.alphabet
-    collection = list()
+    # q5 = {}
+    # collection = db.alphabet
+    # collection = list()
 
     q6 = {}
     collection = db.pairWise
@@ -118,7 +118,7 @@ def q(request):
         q6['links'].append(link)
         i = i + 2
     context['q6'] = q6
-=======
+
     # q3
     cursor = db['q3'].find()
     emojis_ = []
@@ -155,7 +155,7 @@ def q(request):
         }
         q7.append(tmp)
     context['q7'] = q7
->>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
+
 
     # q8
     cursor = db['q8'].find()
@@ -165,14 +165,6 @@ def q(request):
         emojis_.append(row['emoji'])
         pos.append(row['pos'])
 
-<<<<<<< HEAD
-
-    q8 = {}
-    children = []
-=======
-    # q8 = {}
-    # children = []
->>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
     head = []
     middle = []
     tail = []
