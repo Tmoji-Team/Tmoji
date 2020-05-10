@@ -242,8 +242,8 @@ def q(request):
     q11 = []
     for n, c in zip(emojis_, ave_lens):
         tmp = {}
-        tmp['emoji'] = emoji.emojize(n)
-        tmp['ave_len'] = c
+        tmp['Country'] = emoji.emojize(n)
+        tmp['Value'] = c
         q11.append(tmp)
     print(q11)
 
