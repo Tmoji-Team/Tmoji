@@ -24,10 +24,11 @@ def q(request):
 
     # collect to mongodb
     db = _connect_mongo(host='127.0.0.1', port=27017, username='admin', password='123456', db='bigdata')
-    cursor = db['q1'].find()
+
 
     # q1
     q1 = []
+    cursor = db['t1'].find()
     cursor = list(cursor)
     emojis = [row['emoji'] for row in cursor]
     fres = [row['fre'] for row in cursor]
@@ -42,7 +43,7 @@ def q(request):
     context['q1'] = q1
 
     # q2
-    cursor = db['q2'].find()
+    cursor = db['t2'].find()
     cursor = list(cursor)
     emojis_ = [row['emoji'] for row in cursor]
     cols = [row['col'] for row in cursor]
@@ -120,7 +121,7 @@ def q(request):
     context['q6'] = q6
 
     # q3
-    cursor = db['q3'].find()
+    cursor = db['t3'].find()
     emojis_ = []
     uppers = []
     lowers = []
@@ -141,7 +142,7 @@ def q(request):
 
     # q7
     q7 = []
-    cursor = db['q7'].find()
+    cursor = db['t7'].find()
     nums = []
     counts = []
     for row in cursor:
@@ -158,7 +159,7 @@ def q(request):
 
 
     # q8
-    cursor = db['q8'].find()
+    cursor = db['t8'].find()
     emojis_ = []
     pos = []
     for row in cursor:
@@ -196,7 +197,7 @@ def q(request):
     context['q8'] = {'children': [head_dict, middle_dict, tail_dict], 'value': 5}
 
     # q9
-    cursor = db['q9'].find()
+    cursor = db['t9'].find()
     x = []
     y = []
     num = []
@@ -215,7 +216,7 @@ def q(request):
     context['q9'] = q9
 
     # q10
-    cursor = db['q10'].find()
+    cursor = db['t10'].find()
     emojis_ = []
     counts = []
     for row in cursor:
@@ -231,7 +232,7 @@ def q(request):
     context['q10'] = q10
 
     # q11
-    cursor = db['q11'].find()
+    cursor = db['t11'].find()
     emojis_ = []
     ave_lens = []
     for row in cursor:
