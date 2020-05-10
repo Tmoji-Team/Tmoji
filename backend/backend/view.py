@@ -70,6 +70,55 @@ def q(request):
     q2 = {'matrix': matrix, 'indexByName': indexByName, 'nameByIndex': nameByIndex}
     context['q2'] = q2
 
+<<<<<<< HEAD
+    # q4
+    q4 = {}
+    collection = db.top10Word
+    collection = list(collection.find())
+    q4['name'] = 'flare'
+    result_children = []
+    for row in collection:
+        temp_dict = {}
+        temp_dict['name'] = emoji.emojize(row['_1'])
+        children = []
+        words = row['_2']
+        for i in range(len(words)):
+            each_word = {}
+            each_word['name'] = words[i]
+            each_word['value'] = 10000
+            children.append(each_word)
+        temp_dict['children'] = children
+        result_children.append(temp_dict)
+    q4['children'] = result_children
+    context['q4'] = q4
+
+    q5 = {}
+    collection = db.alphabet
+    collection = list()
+
+    q6 = {}
+    collection = db.pairWise
+    collection = list(collection.find())
+    q6['nodes'] = []
+    q6['links'] = []
+    i = 0
+    for row in collection:
+        if i > 19:
+            break
+        node1 = {}
+        node2 = {}
+        link = {}
+        node1['name'] = emoji.emojize(row['_1'])
+        node2['name'] = row['_2'][0]['_1']['_1']
+        q6['nodes'].append(node1)
+        q6['nodes'].append(node2)
+        link['source'] = i
+        link['target'] = i + 1
+        link['value'] = row['_2'][0]['_2']
+        q6['links'].append(link)
+        i = i + 2
+    context['q6'] = q6
+=======
     # q3
     cursor = db['q3'].find()
     emojis_ = []
@@ -106,6 +155,7 @@ def q(request):
         }
         q7.append(tmp)
     context['q7'] = q7
+>>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
 
     # q8
     cursor = db['q8'].find()
@@ -115,8 +165,14 @@ def q(request):
         emojis_.append(row['emoji'])
         pos.append(row['pos'])
 
+<<<<<<< HEAD
+
+    q8 = {}
+    children = []
+=======
     # q8 = {}
     # children = []
+>>>>>>> bdd42a54a8a79816e4100aa21a224325fa3aac8f
     head = []
     middle = []
     tail = []
