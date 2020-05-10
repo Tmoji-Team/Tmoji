@@ -1,4 +1,5 @@
 data/*
 .gitignore/*
-.DS_Store`
+*.DS_Store
 *.pyc
+backend/.idea/
