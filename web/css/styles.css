@@ -58,6 +58,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+.no-padding{
+  padding: 0px !important;
+}
+
  .slice {
     cursor: pointer;
 }

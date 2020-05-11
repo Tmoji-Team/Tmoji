@@ -14,7 +14,7 @@ for (i = 0; i < data.length; i++) {
 		struc = ''
 	}
 	temp = data[i]
-	struc += '<div class="col-sm-3"><div class="card Q5_card""><h3 class="Q5_card-title card-body">'
+	struc += '<div class="col-sm-3 no-padding"><div class="card Q5_card""><h3 class="Q5_card-title card-body">'
   	struc += temp[0].toUpperCase()
   	struc += '</h3><p class="Q5_card-content">'
   	struc += temp[1]
