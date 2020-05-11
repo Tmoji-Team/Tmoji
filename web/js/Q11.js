@@ -1,7 +1,7 @@
 // set the dimensions and margin_11s of the graph
 var margin_11 = {top: 100, right: 0, bottom: 100, left: 0},
-    width_11 = 460 - margin_11.left - margin_11.right,
-    height_11 = 460 - margin_11.top - margin_11.bottom,
+    width_11 = 760 - margin_11.left - margin_11.right,
+    height_11 = 760 - margin_11.top - margin_11.bottom,
     innerRadius = 90,
     outerRadius = Math.min(width_11, height_11) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 

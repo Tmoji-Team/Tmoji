@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 500 - margin.left - margin.right,
-    height = 420 - margin.top - margin.bottom;
+    width = 900 - margin.left - margin.right,
+    height = 720 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#try9")
@@ -36,7 +36,7 @@ d3.csv("https://raw.githubusercontent.com/Tmoji-Team/Tmoji/master/web/test_data/
   // Add a scale for bubble size
   var z = d3.scaleLinear()
     .domain([1, extent_num[1]])
-    .range([ 1, extent_num[1]/extent_x[1]]);
+    .range([ 1, 20]);
 
   // Add dots
   svg.append('g')
