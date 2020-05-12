@@ -20,4 +20,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', view.q),
+    url(r'^predict/', view.get_emoji)
 ]

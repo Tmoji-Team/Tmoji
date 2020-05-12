@@ -23,7 +23,7 @@ function q11(data, selector) {
       .domain(data.map(function(d) { return d.Country; })); // The domain of the X axis is the list of states.
   var y = d3.scaleRadial()
       .range([innerRadius, outerRadius])   // Domain will be define later.
-      .domain([0, 20]); // Domain of Y is from 0 to the max seen in the data
+      .domain([0, 5]); // Domain of Y is from 0 to the max seen in the data
 
   // Add the bars
   svg_11.append("g")
@@ -57,5 +57,3 @@ function q11(data, selector) {
         .attr("alignment-baseline", "middle")
 
 }
-
-// var q_11 = q11(data);

@@ -235,6 +235,22 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section" id="End">
+            <div class="container col-8">
+                <form action="/predict" method="get">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Input here</label>
+                        <textarea class="form-control" name="input" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>   
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>    
+                    <input id="wtf" class="form-control" type="text" placeholder="outcome show here…" readonly>
+
+                </form>
+            </div>
+        </section>
         
         <!-- Footer-->
         <footer class="bg-light py-5">
@@ -321,7 +337,6 @@
             });
             main4.redefine("data", context['q4']);
 
-            
 
             import Q6 from "https://api.observablehq.com/@yq605879396/sankey-diagram.js?v=3";
             const main6 = new Runtime().module(Q6, name => {
@@ -330,6 +345,11 @@
                 }
             });
             main6.redefine("data", context['q6']);
+
+            if (context['result_sent'] !== "") {
+                 document.getElementById("wtf").setAttribute("placeholder", context['result_sent']);
+            }
+
         </script>
 
         <!-- Load Q5 -->

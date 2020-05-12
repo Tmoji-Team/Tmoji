@@ -34,7 +34,7 @@ function q9(data, selector) {
   // Add a scale for bubble size
   var z = d3.scaleLinear()
     .domain([1, extent_num[1]])
-    .range([ 1, extent_num[1]/extent_x[1]]);
+    .range([ 1, 20]);
 
   // Add dots
   svg9.append('g')
