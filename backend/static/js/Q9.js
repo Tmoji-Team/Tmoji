@@ -1,7 +1,7 @@
 function q9(data, selector) {
   var margin9 = {top: 10, right: 20, bottom: 30, left: 50},
-      width9 = 500 - margin9.left - margin9.right,
-      height9 = 420 - margin9.top - margin9.bottom;
+      width9 = 800 - margin9.left - margin9.right,
+      height9 = 620 - margin9.top - margin9.bottom;
 
   // append the svg object to the body of the page
   var svg9 = d3.select(selector)
@@ -20,16 +20,32 @@ function q9(data, selector) {
   var x = d3.scaleLinear()
     .domain([0, extent_x[1]])
     .range([ 0, width9]);
+
   svg9.append("g")
     .attr("transform", "translate(0," + height9 + ")")
-    .call(d3.axisBottom(x));
+    .call(d3.axisBottom(x))
+    .call(g => g.append("text")
+        .attr("x", width9)
+        .attr("y", margin9.bottom-50)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "end")
+        .attr("font-size", 20)
+        .text('sent_length'));
 
   // Add Y axis
   var y = d3.scaleLinear()
     .domain([0, extent_y[1]])
     .range([ height9, 0]);
+
   svg9.append("g")
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y))
+    .call(g => g.append("text")
+        .attr("x", -margin9.left)
+        .attr("y", 20)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "start")
+        .attr("font-size", 20)
+        .text('emoji_counts'));
 
   // Add a scale for bubble size
   var z = d3.scaleLinear()

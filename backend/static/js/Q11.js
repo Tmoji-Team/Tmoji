@@ -1,9 +1,9 @@
 function q11(data, selector) {
   var margin_11 = {top: 100, right: 0, bottom: 100, left: 0},
-    width_11 = 460 - margin_11.left - margin_11.right,
-    height_11 = 460 - margin_11.top - margin_11.bottom,
+    width_11 = 600 - margin_11.left - margin_11.right,
+    height_11 = 600 - margin_11.top - margin_11.bottom,
     innerRadius = 90,
-    outerRadius = Math.min(width_11, height_11) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+    outerRadius = Math.min(width_11-110, height_11-110) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 
   // append the svg object
   var svg_11 = d3.select(selector)
@@ -40,6 +40,11 @@ function q11(data, selector) {
           .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
           .padAngle(0.01)
           .padRadius(innerRadius))
+      .append("text")
+        .text(function(d){return(d.Country)})
+        .attr("transform", function(d) { return (x(d.Country) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
+        .style("font-size", "16px")
+        .attr("alignment-baseline", "middle");
 
 
   // Add the labels
